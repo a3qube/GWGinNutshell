@@ -10,7 +10,7 @@
       navigator.serviceWorker.addEventListener("controllerchange",function(){
         location.reload();
       });
-  
+ 
       let oInstalling = registration.installing;
       let sw;
       if (registration.installing) {
@@ -27,24 +27,7 @@
       sw.addEventListener('statechange',function(e){
         console.log(e.target.state)
       })
-    }
-
-
-
-       /*
-      TODO - when waiting
-      */
-        
-
-        /*
-      TODO - when state Change
-      */
-  
-        
-      /*
-      TODO - UpdateFound
-      */
-      
+    } 
     
     }).catch(function() {
       console.log('Registration failed!');
