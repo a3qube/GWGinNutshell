@@ -4,9 +4,9 @@ self.addEventListener('install', function(event) {
     console.log("within install");
 	console.log(document);
     event.waitUntil(function(){
-     /*
-     TODO after installing
-     */
+    setTimeout(() => {
+        console.log("inside install");
+    }, 10000);
     }
     );
   });
@@ -15,9 +15,9 @@ self.addEventListener('install', function(event) {
   self.addEventListener("activate",function(oEvent){
     console.log("within activate");
 	oEvent.waitUntil(function(){
-     /*
-     TODO after installing
-     */
+        setTimeout(() => {
+            console.log("inside install");
+        }, 10000);
     });
     });
 
@@ -25,18 +25,18 @@ self.addEventListener('install', function(event) {
 self.addEventListener("fetch",function(oEvent){
     console.log("within fetch");
     oEvent.waitUntil(function(){
-     /*
-     TODO after installing
-     */
+        setTimeout(() => {
+            console.log("inside install");
+        }, 10000);
     });
     });
 
 self.addEventListener("message",function(oEvent){
     console.log("within message");
     oEvent.waitUntil(function(){
-     /*
-     TODO after installing
-     */
+        setTimeout(() => {
+            console.log("inside install");
+        }, 10000);
     });
     });
 

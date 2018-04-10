@@ -1,7 +1,7 @@
 
 
   if ('serviceWorker' in navigator) {//Check if browser supports service worker
-    navigator.serviceWorker.register('js/sw/index.js')
+    navigator.serviceWorker.register('./js/sw/index.js')
     .then(function(registration) {
       console.log('registrationistration worked!',registration) ;
       // if(!navigator.serviceWorker.controller){
@@ -10,7 +10,7 @@
       navigator.serviceWorker.addEventListener("controllerchange",function(){
         location.reload();
       });
-  
+
       let oInstalling = registration.installing;
       let sw;
       if (registration.installing) {
@@ -25,11 +25,21 @@
     }
     if(sw){
       sw.addEventListener('statechange',function(e){
-        console.log(e.target.state)
+        let sState = e.target.state;
+        console.log(sState);
+
+        if (sState === 'installed') {
+          document.querySelector('#installing').classList.add('highlight');                    
+      } else if (sState === 'activating') {          
+          document.querySelector('#waiting').classList.add('highlight');                    
+      } else if (sState === 'activated') {          
+          document.querySelector('#active').classList.add('highlight');
+      }
+
+
+
       })
     }
-
-
 
        /*
       TODO - when waiting
