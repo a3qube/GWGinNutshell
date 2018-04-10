@@ -10,11 +10,6 @@
       navigator.serviceWorker.addEventListener("controllerchange",function(){
         location.reload();
       });
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> 78c88d3f655dd0e88f073deaede6ee3473346a25
       let oInstalling = registration.installing;
       let sw;
       if (registration.installing) {
@@ -29,7 +24,6 @@
     }
     if(sw){
       sw.addEventListener('statechange',function(e){
-<<<<<<< HEAD
         let sState = e.target.state;
         console.log(sState);
 
@@ -60,11 +54,6 @@
       TODO - UpdateFound
       */
       
-=======
-        console.log(e.target.state)
-      })
-    } 
->>>>>>> 78c88d3f655dd0e88f073deaede6ee3473346a25
     
     }).catch(function() {
       console.log('Registration failed!');
